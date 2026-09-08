@@ -1,42 +1,45 @@
 # etude-de-danger-quantitative
-EDDQ par Nassima Haned : Modélisation séquentielle d'Étude de Danger Quantitative. Combine écoulements compressibles critiques (V5), formulation en nombres entiers mixtes (PLNEM), optimisation Branch &amp; Bound d'efficacité maximale (sans coût) et audit économétrique final par régression Logit.
-L'AMDEC est purgée de sa cotation qualitative habituelle (grille de criticité subjective $G \times F \times D$ notée de 1 à 10). Elle sert exclusivement de procédure de screening systématique pour produire trois inventaires bruts :
-*   **La liste des scénarios d'accidents majeurs ($k = 1, \dots, n$)** : Échelonnée selon la taille géométrique des brèches (fuite mineure sur joint, rupture de piquage, rupture guillotine), recensant les modes de défaillance et causes physiques (matérielles, procédé, installation, externes).
-*   **Le catalogue des moyens de sécurité candidats** : Organisé en postes de décision (Détection, Isolement, Déluge). Chaque poste propose plusieurs paliers techniques tranchables et indivisibles (ex. : redondance $1\text{oo}1$ / $1\text{oo}2$ / $2\text{oo}3$), incluant un palier ``Absent'' à coût nul.
-*   **La cartographie de transversalité** : Détermine quelles barrières agissent sur quels scénarios, et par quel mécanisme physique (réduction de fréquence $P$ ou réduction de gravité $G$).
-    
+### Nature de la contribution et articulation des 4 Phases
+La contribution de ce travail réside dans le **passage d'un screening préliminaire par indice (IRPI V4) à une méthode d'étude de danger quantitative globale, rigoureuse et optimisée à l'échelle d'une installation industrielle**, articulée de manière séquentielle en 4 phases complémentaires :
 
-## X.3 Étape 2 — Le calcul physique et mathematique 
-exact du risque $R_0 = P_0 \times G_0$
+1. **Phase 1 — Identification & Screening :** Structuration AMDEC et hiérarchisation spatiale initiale par l'indice IRPI V4.
+2. **Phase 2 — Quantification Physico-Fiabiliste Exacte :** Calcul exact des probabilités d'occurrence et de gravité par combinaison de lois physiques ($t$-dépendance de Weibull pour la corrosion, Gumbel pour les surpressions, processus de Poisson) et application du théorème d'inclusion-exclusion de Poincaré pour gérer les causes multiples interdépendantes.
+3. **Phase 3 — Optimisation Combinatoire & Inversion Budgétaire :** Sélection exacte du portefeuille minimal de barrières via *Branch & Bound* et linéarisation de McCormick, transformant le budget global de sécurité d'une contrainte d'entrée (*Input*) en une variable de sortie (*Output*) dictée par la conformité réglementaire (ex. ICPE algériennes).
+4. **Phase 4 — Modélisation Économétrique & Preuve du Biais :** Déploiement d'un modèle économétrique exploratoire sur l'intégralité des combinaisons de barrières du cas d'étude pour quantifier formellement le comportement 
+des modèles d'optimisation. Cette phase apporte la **preuve empirique et chiffrée** que les approches additives classiques (MILP) produisent un biais de surestimation de la réduction de risque pouvant atteindre **+58,46 points** (allant jusqu'à prédire une réduction physiquement impossible de plus de 100 %).
 
-Une fois la structure fixée par l'AMDEC, chaque scénario $k$ reçoit ses valeurs numériques initiales $P_0(k)$ et $G_0(k)$, obtenues par des lois physiques et fiabilistes dédiées :
-*   **$P_0(k)$** : Combinaison des causes par le théorème d'inclusion-exclusion de Poincaré, chaque cause étant calculée à partir d'une loi adaptée (Weibull pour la corrosion, Gumbel pour les pics de surpression, Poisson pour les agressions externes), corrigée en température par l'équation cinétique d'**Arrhenius**.
-*   **$G_0(k)$** : Calcul géométrique de la zone d'impact à partir de la masse de produit libérée. En régime **critique étranglé (\textit{choked flow})**, le relâchement massique est bridé de manière déterministe par la variable de plafond physique propre à chaque type d'activité et masse d'inventaire initiale ($M_{\text{plafond}}$).
+## 2. Comparaison : Méthode Proposée vs. QRA Classique
 
-Le risque initial du scénario est alors $R_0(k) = P_0(k) \times \big[ G_0(k) \big]$. Cette étape caractérise le danger nu de l'installation, avant toute mesure de protection.
-
-
-## X.4 Étape 3 — Le Branch & Bound comme sélecteur d'efficacité maximale pure
-
-Le Branch & Bound reçoit en entrée le triplet issu des phases précédentes (scénarios avec risques nus, paliers discrets, facteurs d'atténuation) et résout le problème de couverture par programmation linéaire en nombres entiers mixtes (PLNEM) :
-*   Il explore l'arbre des combinaisons de paliers et **tranche de manière absolue (sans intervalle flou)** : il sélectionne le vecteur de décision binaire $Z^*$ ($0$ ou $1$).
-*   Pour chaque feuille de l'arbre, il recalcule le risque résiduel exact via un produit géométrique d'atténuation linéarisé par un passage au logarithme népérien ($\ln$), éliminant le biais de bilinéarité.
-*   **Principe de précaution absolue** : L'algorithme exclut totalement le budget ou le coût financier. Il sélectionne la configuration matérielle offrant l'atténuation maximale du risque physiquement disponible, sous la contrainte non compensatoire qu'un scénario sur-protégé ne peut jamais masquer la vulnérabilité d'une brèche majeure.
+| Critère / Dimension | QRA Classique (*Quantitative Risk Assessment*) | Méthode Proposée (AMDEC + Physico-Fiabiliste + Optimisation + Économétrie) |
+| :--- | :--- | :--- |
+| **Périmètre d'analyse** | Évaluation des risques globaux du site (risques individuels $IR$ et sociétaux $F/N$). | Modélisation physique multi-scénarios, **optimisation combinatoire globale** et **validation économétrique de l'espace des solutions**. |
+| **Modélisation des défaillances** | Arbres de défaillances / d'événements (FTA/ETA) basés sur des taux moyens constants (ex. OREDA). | AMDEC couplée aux **lois physiques de dégradation** (Weibull pour la corrosion/usure, Gumbel pour les surpressions) et processus stochastiques (Poisson). |
+| **Combinaison des causes** | Logique booléenne simplifiée (portes ET / OU). | Calcul exact de la probabilité d'occurrence par le **théorème d'inclusion-exclusion de Poincaré** (gestion des dépendances et recoupements). |
+| **Traitement du risque $R = P \times G$** | Évaluation ponctuelle ou simulations de Monte-Carlo. | Prise en compte explicite de la **bilinéarité** (linéarisation de McCormick) éliminant le biais des modèles additifs. |
+| **Sélection des barrières** | Approche itérative par dire d'expert ou grilles LOPA séparées. | **Optimisation combinatoire exacte à l'échelle du site** (*Branch & Bound* / *Set Covering*) identifiant l'allocation globale minimale. |
+| **Phase Économétrique & Validation** | Absence de modélisation économétrique ; analyses de sensibilité ponctuelles. | **Phase 4 dédiée : Modélisation économétrique globale** pour mesurer la structure d'erreur empirique de l'espace combinatoire et prouver formellement le biais. |
+| **Gestion du budget** | Contrainte budgétaire globale fixe définie en amont (*Input*). | **Inversion budgétaire** : le budget total requis est une variable de sortie (*Output*), dictée par le respect des cibles de sécurité sur chaque scénario. |
+| **Contexte réglementaire** | Évaluation vis-à-vis de critères d'acceptabilité génériques (ALARP). | Structuration explicitement alignée sur les exigences réglementaires d'une étude de danger pour installations classées (ex. ICPE algériennes). |
 
 ---
 
-## X.5 Étape 4 — La modélisation économétrique comme moteur de validation *a posteriori*
+## 3. Rôle Stratégique de la Phase 4 (Modélisation Économétrique) dans le Cas Pratique
 
-L'introduction de la phase économétrique en terminus du flux méthodologique assure le verrouillage de la rigueur scientifique. Elle n'intervient pas pour orienter le choix opérationnel, mais pour auditer et valider statistiquement la robustesse de la décision binaire $Z^*$.
+Dans le cadre de l'application industrielle globale sur l'installation classée :
 
-Le modèle déploie une **régression logistique binaire (Modèle Logit)** estimant la probabilité d'homologation d'un établissement ($Y \in \{0, 1\}$) face à l'historique des données du tissu industriel global :
+* **Objectif de la Phase 4 :** Après avoir généré l'espace complet des combinaisons possibles de barrières (catalogue d'actions de prévention et de mitigation), une régression économétrique a été spécifiée et estimée.
+* **Résultat de la démonstration économétrique :** La modélisation économétrique isole la composante d'erreur introduite par l'hypothèse de linéarité additive. Elle démontre que la simplification $R \approx P + G$ (au lieu de $R = P \times G$) surestime l'efficacité des barrières de **+58,46 points de pourcentage**.
 
-$$\ln\left( \frac{P(Y = 1)}{1 - P(Y = 1)} \right) = \beta_0 + \beta_1 \cdot \max(\mathbf{R}_{\text{Systémique}}) + \beta_2 \cdot \tilde{\Omega}_{\text{V5}} + \beta_3 \cdot \text{Effort}_{\text{BTS}} + \varepsilon$$
 
-L'analyse des coefficients $\beta$ par le test du Maximum de Vraisemblance et le calcul du pseudo-$R^2$ de McFadden permettent d'apporter la preuve mathématique que la décision de l'Étape 3 est exempte de biais de spécification ou de dérives paramétriques.
+[Phase 1 : Screening & Collecte] └── Collecte AMDEC systémique & Filtrage initial par l'Indice IRPI V4 │ [Phase 2 : Quantification Physico-Fiabiliste] └── Lois de Weibull / Gumbel / Poisson + Théorème de Poincaré (P x G exact) │ [Phase 3 : Optimisation Combinatoire & Arbitrage] └── Linéarisation de McCormick + Branch & Bound (Inversion Budgétaire) │ [Phase 4 : Modélisation Économétrique & Validation] └── Estimation économétrique sur l'espace des solutions & Preuve du Biais (+58,46 pts)
 
----
 
-## X.6 Propriété clé de l'architecture : irréversibilité et traçabilité
 
-Cette séquence est à sens unique : l'AMDEC ne dépend pas des calculs physiques, le calcul physique ignore les barrières, le Branch & Bound ignore le coût financier, et l'économétrie audite le résultat final. Chaque exigence matérielle imposée au guichet unique est ainsi mathématiquement corrélée à une chaîne causale pure, garantissant une intégrité technique totale devant un jury d'examen ou une autorité de régulation internationale.
+
+
+
+
+
+
+
+
