@@ -31,7 +31,7 @@ Dans le cadre de l'application industrielle globale sur l'installation classée 
 * **Résultat de la démonstration économétrique :** La modélisation économétrique isole la composante d'erreur introduite par l'hypothèse de linéarité additive. Elle démontre que la simplification $R \approx P + G$ (au lieu de $R = P \times G$) surestime l'efficacité des barrières de **+58,46 points de pourcentage**.
 
 
-[Phase 1 : Screening & Collecte] └── Collecte AMDEC systémique & Filtrage initial par l'Indice IRPI V4 │ [Phase 2 : Quantification Physico-Fiabiliste] └── Lois de Weibull / Gumbel / Poisson + Théorème de Poincaré (P x G exact) │ [Phase 3 : Optimisation Combinatoire & Arbitrage] └── Linéarisation de McCormick + Branch & Bound (Inversion Budgétaire) │ [Phase 4 : Modélisation Économétrique & Validation] └── Estimation économétrique sur l'espace des solutions & Preuve du Biais (+58,46 pts)
+[Phase 1 : Screening & Collecte] └── Collecte AMDEC systémique & Filtrage initial par l'Indice IRPI V4 │ [Phase 2 : Quantification Physico-Fiabiliste] └── Lois de Weibull / Gumbel / Poisson + Théorème de Poincaré (P x G exact) │ [Phase 3 : Optimisation Combinatoire & Arbitrage] └── Linéarisation de McCormick + Branch & Bound (Inversion Budgétaire) │ [Phase 4 : Modélisation Économétrique & Validation] └── 
 * **Une inversion assumée de la logique budgétaire usuelle, adaptée au contexte réglementaire des installations classées : le budget de sécurité n’est plus une contrainte d’entrée arbitraire, mais une variable de sortie du modèle, déterminée par l’exigence de conformité aux cibles de réduction de risque fixées scénario par scénario, de manière strictement non compensatoire.
 
 
