@@ -2,7 +2,7 @@
 ### Nature de la contribution et articulation des 4 Phases
 La contribution de ce travail réside dans le **passage d'un screening préliminaire par indice (IRPI V4) à une méthode d'étude de danger quantitative globale, rigoureuse et optimisée à l'échelle d'une installation industrielle**, articulée de manière séquentielle en 4 phases complémentaires :
 
-1. **Phase 1 — Identification & Screening :** Structuration AMDEC et hiérarchisation spatiale initiale par l'indice IRPI V4.
+1. **Phase 1 — Identification & Screening :** Structuration AMDEC et hiérarchisation 
 2. **Phase 2 — Quantification Physico-Fiabiliste Exacte :** Calcul exact des probabilités d'occurrence et de gravité par combinaison de lois physiques ($t$-dépendance de Weibull pour la corrosion, Gumbel pour les surpressions, processus de Poisson) et application du théorème d'inclusion-exclusion de Poincaré pour gérer les causes multiples interdépendantes.
 3. **Phase 3 — Optimisation Combinatoire & Inversion Budgétaire :** Sélection exacte du portefeuille minimal de barrières via *Branch & Bound* et linéarisation de McCormick, transformant le budget global de sécurité d'une contrainte d'entrée (*Input*) en une variable de sortie (*Output*) dictée par la conformité réglementaire (ex. ICPE algériennes).
 4. **Phase 4 — Modélisation Économétrique & Preuve du Biais :** Déploiement d'un modèle économétrique exploratoire sur l'intégralité des combinaisons de barrières du cas d'étude pour quantifier formellement le comportement 
