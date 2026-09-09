@@ -31,7 +31,10 @@ Dans le cadre de l'application industrielle globale sur l'installation classée 
 * **Résultat de la démonstration économétrique :** La modélisation économétrique isole la composante d'erreur introduite par l'hypothèse de linéarité additive. Elle démontre que la simplification $R \approx P + G$ (au lieu de $R = P \times G$) surestime l'efficacité des barrières de **+58,46 points de pourcentage**.
 
 
-[Phase 1 : Screening & Collecte] └── Collecte AMDEC systémique & Filtrage initial par l'Indice IRPI V4 │ [Phase 2 : Quantification Physico-Fiabiliste] └── Lois de Weibull / Gumbel / Poisson + Théorème de Poincaré (P x G exact) │ [Phase 3 : Optimisation Combinatoire & Arbitrage] └── Linéarisation de McCormick + Branch & Bound (Inversion Budgétaire) │ [Phase 4 : Modélisation Économétrique & Validation] └── 
+[Phase 1 : Screening & Collecte] └── Collecte AMDEC systémique & Filtrage initial par l'Indice IRPI V4 │
+[Phase 2 : Quantification Physico-Fiabiliste] └── Lois de Weibull / Gumbel / Poisson + Théorème de Poincaré (P x G exact) │ 
+[Phase 3 : Optimisation Combinatoire & Arbitrage] └── Linéarisation de McCormick + Branch & Bound (Inversion Budgétaire) │
+[Phase 4 : Modélisation Économétrique & Validation] └── 4. **Phase 4 — Modélisation Économétrique du Budget Optimal :** Spécification d'un modèle économétrique (régression non-linéaire, type Logit) sur l'espace des combinaisons de barrières, visant à identifier le budget de sécurité au-delà duquel le gain marginal en réduction de risque devient négligeable, et à quantifier l'écart entre une approche additive ($R \approx P + G$) et l'approche multiplicative exacte ($R = P \times G$). *Phase en cours de développement — résultats à confirmer par calcul.*
 * **Une inversion assumée de la logique budgétaire usuelle, adaptée au contexte réglementaire des installations classées : le budget de sécurité n’est plus une contrainte d’entrée arbitraire, mais une variable de sortie du modèle, déterminée par l’exigence de conformité aux cibles de réduction de risque fixées scénario par scénario, de manière strictement non compensatoire.
 
 
