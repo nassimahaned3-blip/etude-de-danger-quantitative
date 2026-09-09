@@ -12,7 +12,7 @@ des modèles d'optimisation. Cette phase apporte la **preuve empirique et chiffr
 
 | Critère / Dimension | QRA Classique (*Quantitative Risk Assessment*) | Méthode Proposée (AMDEC + Physico-Fiabiliste + Optimisation + Économétrie) |
 | :--- | :--- | :--- |
-| **Périmètre d'analyse** | Évaluation des risques globaux du site (risques individuels $IR$ et sociétaux $F/N$). | Modélisation physique multi-scénarios, **optimisation combinatoire globale** et **validation économétrique de l'espace des solutions**. |
+| **Périmètre d'analyse** | Évaluation des risques globaux du site  | Modélisation physique multi-scénarios, **optimisation combinatoire globale** et **validation économétrique de l'espace des solutions**. |
 | **Modélisation des défaillances** | Arbres de défaillances / d'événements (FTA/ETA) basés sur des taux moyens constants (ex. OREDA). | AMDEC couplée aux **lois physiques de dégradation** (Weibull pour la corrosion/usure, Gumbel pour les surpressions) et processus stochastiques (Poisson). |
 | **Combinaison des causes** | Logique booléenne simplifiée (portes ET / OU). | Calcul exact de la probabilité d'occurrence par le **théorème d'inclusion-exclusion de Poincaré** (gestion des dépendances et recoupements). |
 | **Traitement du risque $R = P \times G$** | Évaluation ponctuelle ou simulations de Monte-Carlo. | Prise en compte explicite de la **bilinéarité** (linéarisation de McCormick) éliminant le biais des modèles additifs. |
