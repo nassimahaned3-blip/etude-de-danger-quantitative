@@ -14,14 +14,10 @@ La contribution de ce travail réside dans le **passage d'un screening prélimin
 | :--- | :--- | :--- |
 | **Périmètre d'analyse** | Évaluation des risques globaux du site  | Modélisation physique multi-scénarios, **optimisation combinatoire globale** et **validation économétrique de l'espace des solutions**. |
 | **Modélisation des défaillances** | Arbres de défaillances / d'événements (FTA/ETA) basés sur des taux moyens constants (ex. OREDA). | AMDEC couplée aux **lois physiques de dégradation** (Weibull pour la corrosion/usure, Gumbel pour les surpressions) et processus stochastiques (Poisson). |
-| **Combinaison des causes** | Logique booléenne simplifiée (portes ET / OU). | Calcul exact de la probabilité d'occurrence par le **théorème d'inclusion-exclusion de Poincaré** (gestion des dépendances et recoupements). |
-| **Traitement du risque $R = P \times G$** | Évaluation ponctuelle ou simulations de Monte-Carlo. | Prise en compte explicite de la **bilinéarité** (linéarisation de McCormick) éliminant le biais des modèles additifs. |
-| **Sélection des barrières** | Approche itérative par dire d'expert ou grilles LOPA séparées. | **Optimisation combinatoire exacte à l'échelle du site** (*Branch & Bound* / *Set Covering*) identifiant l'allocation globale minimale. |
-| **Phase Économétrique & Validation** | Absence de modélisation économétrique ; analyses de sensibilité ponctuelles. | **Phase 4 dédiée : Modélisation économétrique globale** pour mesurer la structure d'erreur empirique de l'espace combinatoire et prouver formellement le biais. |
-| **Gestion du budget** | Contrainte budgétaire globale fixe définie en amont (*Input*). | **Inversion budgétaire** : le budget total requis est une variable de sortie (*Output*), dictée par le respect des cibles de sécurité sur chaque scénario. |
-| **Contexte réglementaire** | Évaluation vis-à-vis de critères d'acceptabilité génériques (ALARP). | Structuration explicitement alignée sur les exigences réglementaires d'une étude de danger pour installations classées (ex. ICPE algériennes). |
+ **Optimisation combinatoire exacte à l'échelle du site** (*Branch & Bound* / *Set Covering*) identifiant l'allocation globale minimale. |
+| **Phase Économétrique & Validation** |  modélisation économétrique ; analyses de sensibilité ponctuelles. | **Phase 4 dédiée : Modélisation économétrique globale** pour mesurer la structure d'erreur empirique de l'espace combinatoire et prouver formellement le biais. |
+| **Gestion du budget** |  **Inversion budgétaire** : le budget total requis est une variable de sortie (*Output*), dictée par le respect des cibles de sécurité sur chaque scénario. |
 
----
 
 ## 3. Rôle Stratégique de la Phase 4 (Modélisation Économétrique) dans le Cas Pratique
 
