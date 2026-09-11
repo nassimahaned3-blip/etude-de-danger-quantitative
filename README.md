@@ -4,7 +4,7 @@ La contribution de ce travail réside dans le **passage d'un screening prélimin
 
 1. **Phase 1 — Identification & Screening :** Structuration AMDEC et hiérarchisation 
 2. **Phase 2 — Quantification Physico-Fiabiliste Exacte :** Calcul exact des probabilités d'occurrence et de gravité par combinaison de lois physiques ($t$-dépendance de Weibull pour la corrosion, Gumbel pour les surpressions, processus de Poisson) et application du théorème d'inclusion-exclusion de Poincaré pour gérer les causes multiples interdépendantes.
-3. **Phase 3 — Optimisation Combinatoire & Inversion Budgétaire :** Sélection exacte du portefeuille maximale de barrières via *Branch & Bound* et linéarisation de McCormick, transformant le budget global de sécurité d'une contrainte d'entrée (*Input*) en une variable de sortie (*Output*) dictée par la conformité réglementaire (ex. ICPE algériennes).
+3. **Phase 3 — Optimisation Combinatoire & Inversion Budgétaire :** Sélection exacte du portefeuille maximale de barrières via *Branch & Bound* et linéarisation de McCormick, transformant le budget global de sécurité d'une contrainte d'entrée (*Input*) en une variable de sortie (*Output*) 
 4. **Phase 4 — Modélisation Économétrique & Preuve du Biais :** Déploiement d'un modèle économétrique exploratoire sur l'intégralité des combinaisons de barrières du cas d'étude pour quantifier formellement le comportement 
 
 
