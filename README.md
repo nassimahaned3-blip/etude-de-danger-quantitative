@@ -30,8 +30,8 @@ Dans le cadre de l'application industrielle globale sur l'installation classée 
 [Phase 1 : Screening & Collecte] └── Collecte AMDEC systémique & Filtrage initial par l'Indice IRPI V4 │
 [Phase 2 : Quantification Physico-Fiabiliste] └── Lois de Weibull / Gumbel / Poisson + Théorème de Poincaré (P x G exact) │ 
 [Phase 3 : Optimisation Combinatoire & Arbitrage] └── Linéarisation de McCormick + Branch & Bound (Inversion Budgétaire) │
-[Phase 4 : Modélisation Économétrique & Validation] └── 4. **Phase 4 — Modélisation Économétrique du Budget Optimal :** Spécification d'un modèle économétrique (régression non-linéaire) sur l'espace des combinaisons de barrières, visant à identifier le budget de sécurité , et à quantifier l'écart entre . *Phase en cours de développement — résultats à confirmer par calcul.*
-* **Une inversion assumée de la logique budgétaire usuelle, adaptée au contexte réglementaire des installations classées : le budget de sécurité n’est plus une contrainte d’entrée arbitraire, mais une variable de sortie du modèle, déterminée par l’exigence de conformité aux cibles de réduction de risque fixées scénario par scénario, de manière strictement non compensatoire.
+[Phase 4 : Modélisation Économétrique & Validation] └── 4. **Phase 4 — Modélisation Économétrique du Budget Optimal :** Spécification d'un modèle économétrique (régression non-linéaire) sur l'espace des combinaisons de barrières, visant à identifier le budget de sécurité , pour faire face aux risques . 
+* **Une inversion assumée de la logique budgétaire usuelle, adaptée au contexte réglementaire des installations classées : le budget de sécurité n’est plus une contrainte d’entrée arbitraire, mais une variable de sortie du modèle, déterminée par l’exigence de conformité aux cibles de réduction de risque fixées scénario par scénario, de manière strictement non compensatoire.et avoir le budget ideale pour avoir une meilleur securité.
 
 
 
