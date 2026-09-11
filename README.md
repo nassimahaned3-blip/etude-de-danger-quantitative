@@ -14,8 +14,8 @@ La contribution de ce travail réside dans le **passage d'un screening prélimin
 | :--- | :--- | :--- |
 | **Périmètre d'analyse** | Évaluation des risques globaux du site  | Modélisation physique multi-scénarios, **optimisation combinatoire globale** et **validation économétrique de l'espace des solutions**. |
 | **Modélisation des défaillances** | Arbres de défaillances / d'événements (FTA/ETA) basés sur des taux moyens constants (ex. OREDA). | AMDEC couplée aux **lois physiques de dégradation** (Weibull pour la corrosion/usure, Gumbel pour les surpressions) et processus stochastiques (Poisson). |
- **Optimisation combinatoire exacte à l'échelle du site** (*Branch & Bound* / *Set Covering*) identifiant l'allocation globale minimale. |
-| **Phase Économétrique & Validation** |  modélisation économétrique ; analyses de sensibilité ponctuelles. | **Phase 4 dédiée : Modélisation économétrique globale** pour mesurer la structure d'erreur empirique de l'espace combinatoire et prouver formellement le biais. |
+ **Optimisation combinatoire exacte à l'échelle du site** (*Branch & Bound* ) identifiant l'allocation globale maximale. |
+| **Phase Économétrique & Validation** |  modélisation économétrique ; analyses de sensibilité ponctuelles. | **Phase 4 dédiée : Modélisation économétrique globale** |
 | **Gestion du budget** |  **Inversion budgétaire** : le budget total requis est une variable de sortie (*Output*), dictée par le respect des cibles de sécurité sur chaque scénario. |
 
 
