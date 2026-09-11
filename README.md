@@ -24,7 +24,7 @@ La contribution de ce travail réside dans le **passage d'un screening prélimin
 Dans le cadre de l'application industrielle globale sur l'installation classée :
 
 * **Objectif de la Phase 4 :** Après avoir généré l'espace complet des combinaisons possibles de barrières (catalogue d'actions de prévention et de mitigation), une régression économétrique a été spécifiée et estimée.
-* **Résultat de la démonstration économétrique :** La modélisation économétrique isole la composante d'erreur introduite par l'hypothèse de linéarité additive. Elle démontre que la simplification $R \approx P + G$ (au lieu de $R = P \times G$) surestime l'efficacité des barrières de **+58,46 points de pourcentage**.
+* **Résultat de la démonstration économétrique :** La modélisation économétrique isole la composante d'erreur introduite par l'hypothèse de linéarité additive. 
 
 
 [Phase 1 : Screening & Collecte] └── Collecte AMDEC systémique & Filtrage initial par l'Indice IRPI V4 │
